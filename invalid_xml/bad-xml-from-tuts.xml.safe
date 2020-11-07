@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="&quot;Vonage CCaaS TUTS&quot;" errors="0" failures="2" skipped="6" tests="38" time="1.128" timestamp="2020-11-05T17:03:07.579240" hostname="5ec6aef72d0e"><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_01_input_vars_have_descriptions[server-database_server]" time="0.004"><failure message="AssertionError: &#10;  &#10;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#10;  &#10;  ===============================&#10;  VCC Terraform Unit Test Results&#10;  ===============================&#10;  TEST ID: CS_01&#10;  &#10;  FAILURE LIST:&#10;  Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf&#10;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#10;  &#10;assert False">stack = 'database_server', module = 'server'
+
+    def test_cs_01_input_vars_have_descriptions(stack, module):
+        """
+        *********************************************
+        VCC Operations Terraform Coding Standard Test
+        *********************************************
+    
+        The latest version of the VCC Operations Terraform Coding Standard is stored at
+        https://confluence.vonage.com/pages/viewpage.action?pageId=119591668
+    
+        TEST ID : CS_01
+    
+        TEST PURPOSE : Check that every input variable in variable.tf has an associated description.
+    
+        This test does NOT check if the description is non-trivial - that is done in another test.
+        """
+    
+        _failures = []
+    
+        terraform_files = tuts_sdk_file_funcs.match_files_with_recursion(
+            stack, module, "variable.tf"
+        )
+    
+        num_terraform_files = len(terraform_files)
+        if num_terraform_files is not 0:
+    
+            for file_under_test in terraform_files:
+                (
+                    result,
+                    _diagnostics,
+                ) = nvm_tf_coding_standard_low_level_funcs.all_variables_have_a_description(
+                    file_under_test
+                )
+                if not result:
+                    _failures.append(_diagnostics)
+    
+        if _failures:
+&gt;           assert False, tuts_sdk_assert_message.make_assert_message("CS_01", _failures)
+E           AssertionError: 
+E             
+E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+E             
+E             ===============================
+E             VCC Terraform Unit Test Results
+E             ===============================
+E             TEST ID: CS_01
+E             
+E             FAILURE LIST:
+E             Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf
+E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+E             
+E           assert False
+
+_diagnostics = ['Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf']
+_failures  = [['Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf']]
+file_under_test = '/workspace/aws-infrastructure/module_unit_testing/../modules/stacks/database_server/server/variable.tf'
+module     = 'server'
+num_terraform_files = 1
+result     = False
+stack      = 'database_server'
+terraform_files = ['/workspace/aws-infrastructure/module_unit_testing/../modules/stacks/database_server/server/variable.tf']
+
+module_tests/test_ci_coding_standard.py:65: AssertionError</failure></testcase><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_02_output_vars_have_descriptions[server-database_server]" time="0.001" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_03_input_vars_descriptions_ok[server-database_server]" time="0.003"><failure message="AssertionError: &#10;  &#10;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#10;  &#10;  ===============================&#10;  VCC Terraform Unit Test Results&#10;  ===============================&#10;  TEST ID: CS_03&#10;  &#10;  FAILURE LIST:&#10;  Description=&quot;ops_nvm_house_office&quot; is not compliant (Description is a single word) @ >stack = 'database_server', module = 'server'
+
+    def test_cs_03_input_vars_descriptions_ok(stack, module):
+        """
+        *********************************************
+        VCC Operations Terraform Coding Standard Test
+        *********************************************
+    
+        The latest version of the VCC Operations Terraform Coding Standard is stored at
+        https://confluence.vonage.com/pages/viewpage.action?pageId=119591668
+    
+        TEST ID : CS_03
+    
+        TEST PURPOSE : Check that every variable in variable.tf has a non-trivial description
+        e.g.
+        * The description is not empty ("")
+        * The description is not the same as the name of the variable
+        * The description is only a few characters long etc.
+        """
+    
+        _failures = []
+    
+        terraform_files = tuts_sdk_file_funcs.match_files_with_recursion(
+            stack, module, "variable.tf"
+        )
+    
+        # Fail the test if can't find one and only one variable file to process
+        num_terraform_files = len(terraform_files)
+        if num_terraform_files is not 0:
+            for file_under_test in terraform_files:
+                (
+                    result,
+                    _diagnostics,
+                ) = nvm_tf_coding_standard_low_level_funcs.all_descriptions_are_compliant(
+                    file_under_test
+                )
+                if not result:
+                    _failures.append(_diagnostics)
+    
+        if _failures:
+&gt;           assert False, tuts_sdk_assert_message.make_assert_message("CS_03", _failures)
+E           AssertionError: 
+E             
+E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+E             
+E             ===============================
+E             VCC Terraform Unit Test Results
+E             ===============================
+E             TEST ID: CS_03
+E             
+E             FAILURE LIST:
+E             Description="ops_nvm_house_office" is not compliant (Description is a single word) @ 
+E             Description="vpn_global" is not compliant (Description is a single word) @ 
+E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+E             
+E           assert False
+
+_diagnostics = ['Description="ops_nvm_house_office" is not compliant (Description is a single word) @  is not compliant (Description is a single word) @ ]
+_failures  = [['Description="ops_nvm_house_office" is not compliant (Description is a single word) @  is not compliant (Description is a single word) @ ]]
+file_under_test = '/workspace/aws-infrastructure/module_unit_testing/../modules/stacks/database_server/server/variable.tf'
+module     = 'server'
+num_terraform_files = 1
+result     = False
+stack      = 'database_server'
+terraform_files = ['/workspace/aws-infrastructure/module_unit_testing/../modules/stacks/database_server/server/variable.tf']
+
+module_tests/test_ci_coding_standard.py:149: AssertionError</failure></testcase><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_04_output_vars_descriptions_ok[server-database_server]" time="0.001" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_05_var_and_resource_names_ok[server-database_server]" time="0.009" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_06_module_readme_ok[server-database_server]" time="0.001" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_07_tform_line_length_ok[server-database_server]" time="0.011" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_08_tform_filename_ok[server-database_server]" time="0.001" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_09_tform_filename_length_ok[server-database_server]" time="0.001" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_10_tform_file_num_lines_ok[server-database_server]" time="0.010" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_11_tform_file_open_tasks_ok[server-database_server]" time="0.003" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_12_no_tform_imposter_filenames[server-database_server]" time="0.002" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_13_local_vars_ok[Tf_plan/config/tf_unit_tests_config.yaml-server-database_server]" time="0.054" /><testcase classname="module_tests.test_ci_lambda_policy" name="test_lambda_01_func_has_description[server-database_server]" time="0.008" /><testcase classname="module_tests.test_ci_lambda_policy" name="test_lambda_02_func_in_lambda_filename[server-database_server]" time="0.008" /><testcase classname="module_tests.test_ci_plan" name="test_pl_01_aws_resources_destroyed[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_plan" name="test_pl_02_aws_resources_added[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.050" /><testcase classname="module_tests.test_ci_plan" name="test_pl_03_aws_resources_changed[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_plan_warnings" name="test_terraform_plan_no_warning[/artifacts/terraform_plan_hashicorp.json]" time="0.001" /><testcase classname="module_tests.test_ci_plan_warnings" name="test_terraform_plan_no_deprecated[/artifacts/terraform_plan_hashicorp.json]" time="0.001" /><testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_stage_default_tags[Tf_plan/config/tf_unit_tests_config.yaml-database_server-ci_build]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:25: unconditional skip</skipped></testcase><testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_cloud_number_default_tags[database_server-ci_build]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:97: unconditional skip</skipped></testcase><testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_built_by_default_tags[server-database_server-ci_build]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:147: unconditional skip</skipped></testcase><testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_owner_team_default_tags[server-database_server-ci_build]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:212: unconditional skip</skipped></testcase><testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_stack_default_tags[server-database_server-ci_build]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:277: unconditional skip</skipped></testcase><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_01_name_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_02_owner_team_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.056" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_03_stack_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_04_cloud_number_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server-dev-cicd-dub-cid01]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_05_environment_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server-dev-cicd-dub-cid01]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_06_built_by_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_07_resource_name_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_08_generic_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_09_deprecated_tag[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_10_name_tags_unique[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_tagging_policy.py:592: unconditional skip</skipped></testcase><testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_11_loadbalancer_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" /><testcase classname="module_tests.test_terraform_version" name="test_terraform_version[Tf_plan/config/tf_unit_tests_config.yaml-server-database_server-ci_build-0.12.17]" time="0.044" /><testcase classname="module_tests.test_tuts_internal" name="test_tuts_01_aws_resource_taggable_error[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server-ci_build]" time="0.048" /></testsuite></testsuites>

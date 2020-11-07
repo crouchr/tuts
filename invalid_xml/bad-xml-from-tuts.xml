@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="&quot;Vonage CCaaS TUTS&quot;" errors="0" failures="2" skipped="6" tests="38" time="1.128" timestamp="2020-11-05T17:03:07.579240" hostname="5ec6aef72d0e"><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_01_input_vars_have_descriptions[server-database_server]" time="0.004"><failure message="AssertionError: &#10;  &#10;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#10;  &#10;  ===============================&#10;  VCC Terraform Unit Test Results&#10;  ===============================&#10;  TEST ID: CS_01&#10;  &#10;  FAILURE LIST:&#10;  Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf&#10;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#10;  &#10;assert False">stack = 'database_server', module = 'server'
 
     def test_cs_01_input_vars_have_descriptions(stack, module):
-
+        """
+        *********************************************
+        VCC Operations Terraform Coding Standard Test
+        *********************************************
+    
+        The latest version of the VCC Operations Terraform Coding Standard is stored at
+        https://confluence.vonage.com/pages/viewpage.action?pageId=119591668
+    
+        TEST ID : CS_01
+    
+        TEST PURPOSE : Check that every input variable in variable.tf has an associated description.
+    
+        This test does NOT check if the description is non-trivial - that is done in another test.
+        """
     
         _failures = []
     
@@ -23,7 +36,21 @@
                     _failures.append(_diagnostics)
     
         if _failures:
-
+&gt;           assert False, tuts_sdk_assert_message.make_assert_message("CS_01", _failures)
+E           AssertionError: 
+E             
+E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+E             
+E             ===============================
+E             VCC Terraform Unit Test Results
+E             ===============================
+E             TEST ID: CS_01
+E             
+E             FAILURE LIST:
+E             Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf
+E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+E             
+E           assert False
 
 _diagnostics = ['Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf']
 _failures  = [['Not all variables (num_vars=46) have a corresponding description (num_descs=48) in /modules/stacks/database_server/server/variable.tf']]
@@ -37,7 +64,22 @@ terraform_files = ['/workspace/aws-infrastructure/module_unit_testing/../modules
 module_tests/test_ci_coding_standard.py:65: AssertionError</failure></testcase><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_02_output_vars_have_descriptions[server-database_server]" time="0.001" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_03_input_vars_descriptions_ok[server-database_server]" time="0.003"><failure message="AssertionError: &#10;  &#10;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#10;  &#10;  ===============================&#10;  VCC Terraform Unit Test Results&#10;  ===============================&#10;  TEST ID: CS_03&#10;  &#10;  FAILURE LIST:&#10;  Description=&quot;ops_nvm_house_office&quot; is not compliant (Description is a single word) @ >stack = 'database_server', module = 'server'
 
     def test_cs_03_input_vars_descriptions_ok(stack, module):
-
+        """
+        *********************************************
+        VCC Operations Terraform Coding Standard Test
+        *********************************************
+    
+        The latest version of the VCC Operations Terraform Coding Standard is stored at
+        https://confluence.vonage.com/pages/viewpage.action?pageId=119591668
+    
+        TEST ID : CS_03
+    
+        TEST PURPOSE : Check that every variable in variable.tf has a non-trivial description
+        e.g.
+        * The description is not empty ("")
+        * The description is not the same as the name of the variable
+        * The description is only a few characters long etc.
+        """
     
         _failures = []
     

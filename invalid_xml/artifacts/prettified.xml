@@ -152,24 +152,19 @@ module_tests/test_ci_coding_standard.py:149: AssertionError
 <testcase classname="module_tests.test_ci_plan_warnings" name="test_terraform_plan_no_warning[/artifacts/terraform_plan_hashicorp.json]" time="0.001" />
 <testcase classname="module_tests.test_ci_plan_warnings" name="test_terraform_plan_no_deprecated[/artifacts/terraform_plan_hashicorp.json]" time="0.001" />
 <testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_stage_default_tags[Tf_plan/config/tf_unit_tests_config.yaml-database_server-ci_build]" time="0.000">
-<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:25: unconditional skip
-</skipped>
+<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:25: unconditional skip</skipped>
 </testcase>
 <testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_cloud_number_default_tags[database_server-ci_build]" time="0.000">
-<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:97: unconditional skip
-</skipped>
+<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:97: unconditional skip</skipped>
 </testcase>
 <testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_built_by_default_tags[server-database_server-ci_build]" time="0.000">
-<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:147: unconditional skip
-</skipped>
+<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:147: unconditional skip</skipped>
 </testcase>
 <testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_owner_team_default_tags[server-database_server-ci_build]" time="0.000">
-<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:212: unconditional skip
-</skipped>
+<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:212: unconditional skip</skipped>
 </testcase>
 <testcase classname="module_tests.test_ci_stack_tfvars_tags" name="test_stack_tfvars_stack_default_tags[server-database_server-ci_build]" time="0.000">
-<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:277: unconditional skip
-</skipped>
+<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_stack_tfvars_tags.py:277: unconditional skip</skipped>
 </testcase>
 <testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_01_name_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" />
 <testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_02_owner_team_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.056" />
@@ -181,8 +176,7 @@ module_tests/test_ci_coding_standard.py:149: AssertionError
 <testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_08_generic_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" />
 <testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_09_deprecated_tag[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" />
 <testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_10_name_tags_unique[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.000">
-<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_tagging_policy.py:592: unconditional skip
-</skipped>
+<skipped type="pytest.skip" message="unconditional skip">/workspace/aws-infrastructure/module_unit_testing/module_tests/test_ci_tagging_policy.py:592: unconditional skip</skipped>
 </testcase>
 <testcase classname="module_tests.test_ci_tagging_policy" name="test_tag_11_loadbalancer_tag_ok[/artifacts-/artifacts/terraform_plan_hashicorp.json-Tf_plan/config/tf_unit_tests_config.yaml-server]" time="0.048" />
 <testcase classname="module_tests.test_terraform_version" name="test_terraform_version[Tf_plan/config/tf_unit_tests_config.yaml-server-database_server-ci_build-0.12.17]" time="0.044" />

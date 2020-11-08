@@ -64,7 +64,7 @@ terraform_files = ['/workspace/aws-infrastructure/module_unit_testing/../modules
 module_tests/test_ci_coding_standard.py:65: AssertionError</failure></testcase><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_02_output_vars_have_descriptions[server-database_server]" time="0.001" /><testcase classname="module_tests.test_ci_coding_standard" name="test_cs_03_input_vars_descriptions_ok[server-database_server]" time="0.003"><failure message="AssertionError: &#10;  &#10;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#10;  &#10;  ===============================&#10;  VCC Terraform Unit Test Results&#10;  ===============================&#10;  TEST ID: CS_03&#10;  &#10;  FAILURE LIST:&#10;  Description=&quot;ops_nvm_house_office&quot; is not compliant (Description is a single word) @ >stack = 'database_server', module = 'server'
 
     def test_cs_03_input_vars_descriptions_ok(stack, module):
-        """
+
         *********************************************
         VCC Operations Terraform Coding Standard Test
         *********************************************
@@ -76,15 +76,14 @@ module_tests/test_ci_coding_standard.py:65: AssertionError</failure></testcase><
     
         TEST PURPOSE : Check that every variable in variable.tf has a non-trivial description
         e.g.
-        * The description is not empty ("")
         * The description is not the same as the name of the variable
         * The description is only a few characters long etc.
-        """
+
     
         _failures = []
     
         terraform_files = tuts_sdk_file_funcs.match_files_with_recursion(
-            stack, module, "variable.tf"
+            stack, module, 'variable.tf'
         )
     
         # Fail the test if can't find one and only one variable file to process
@@ -101,7 +100,7 @@ module_tests/test_ci_coding_standard.py:65: AssertionError</failure></testcase><
                     _failures.append(_diagnostics)
     
         if _failures:
-&gt;           assert False, tuts_sdk_assert_message.make_assert_message("CS_03", _failures)
+&gt;           assert False, tuts_sdk_assert_message.make_assert_message('CS_03', _failures)
 E           AssertionError: 
 E             
 E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
@@ -112,14 +111,14 @@ E             ===============================
 E             TEST ID: CS_03
 E             
 E             FAILURE LIST:
-E             Description="ops_nvm_house_office" is not compliant (Description is a single word) @ 
-E             Description="vpn_global" is not compliant (Description is a single word) @ 
+E             Description='ops_nvm_house_office' is not compliant (Description is a single word) @
+E             Description='vpn_global' is not compliant (Description is a single word) @
 E             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 E             
 E           assert False
 
-_diagnostics = ['Description="ops_nvm_house_office" is not compliant (Description is a single word) @  is not compliant (Description is a single word) @ ]
-_failures  = [['Description="ops_nvm_house_office" is not compliant (Description is a single word) @  is not compliant (Description is a single word) @ ]]
+_diagnostics = ['Description='ops_nvm_house_office' is not compliant (Description is a single word) @  is not compliant (Description is a single word) @ ]
+_failures  = [['Description='ops_nvm_house_office' is not compliant (Description is a single word) @  is not compliant (Description is a single word) @ ]]
 file_under_test = '/workspace/aws-infrastructure/module_unit_testing/../modules/stacks/database_server/server/variable.tf'
 module     = 'server'
 num_terraform_files = 1

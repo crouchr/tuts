@@ -1,14 +1,20 @@
 import validate_xml
 
 
-def prettify_unit_tests_results(in_file, out_file):
+def prettify_unit_tests_results(in_file_xml, out_file):
+    """
+    Remove characters from in_file_xml that are not valid XML
+    :param in_file_xml:
+    :param out_file:
+    :return:
+    """
     try:
 
         lines_processed = 0
         doc_string = '"' + '"' + '"'
         f_out = open(out_file, 'w')
 
-        with open(in_file) as f_in:
+        with open(in_file_xml) as f_in:
             for line in f_in:
                 pretty_line = line
                 if doc_string in pretty_line:
@@ -49,22 +55,3 @@ def prettify_unit_tests_results(in_file, out_file):
 
     except Exception as e:
         return False, e.__str__()
-
-
-if __name__ == '__main__':
-    xsd_file = 'schema/junit10.xsd'
-
-    xml_file = 'artifacts/bad-xml-from-tuts.xmlererer'
-    pretty_file = 'artifacts/prettified.xml'
-
-    result, err_msg = prettify_unit_tests_results(xml_file, pretty_file)
-
-    result, err_msg = validate_xml.validate_xml('artifacts/prettified.xml', xsd_file)
-
-    print('Schema : ' + xsd_file)
-    print('Results file : ' + pretty_file)
-
-    if result:
-        print("SUCCESS : Valid XML")
-    else:
-        print("Invalid XML : " + err_msg.__str__())

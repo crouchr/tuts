@@ -1,3 +1,5 @@
+# These tests are written to fail
+
 """
 This module contains Unit Tests for checking a Terraform module against the VCC Terraform Coding Standard.
 These unit tests use the PyTest framework and are run by Jenkins when the Terraform module is built.

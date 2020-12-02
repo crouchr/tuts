@@ -1,5 +1,3 @@
-import validate_xml
-
 
 def prettify_unit_tests_results(in_file_xml, out_file):
     """
